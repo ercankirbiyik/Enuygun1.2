@@ -1,0 +1,102 @@
+[
+  {
+    "key": "nereden",
+    "value": "OriginInput",
+    "type": "id"
+  },
+  {
+    "key": "nereye",
+    "value": "DestinationInput",
+    "type": "id"
+  },
+  {
+    "key": "tek yön",
+    "value": "oneWayCheckbox",
+    "type": "id"
+  },
+  {
+    "key": "aktarmasız",
+    "value": "transitFilter",
+    "type": "id"
+  },
+  {
+    "key": "gidiş tarihi",
+    "value": "DepartureDate",
+    "type": "id"
+  },
+  {
+    "key": "dönüş tarihi",
+    "value": "ReturnDate",
+    "type": "id"
+  },
+  {
+    "key": "yolcu seçim butonu",
+    "value": "//*[@data-testid='passengerSelectButtonMulti']",
+    "type": "xpath"
+  },
+  {
+    "key": "31 Ekim gidiş tarihi",
+    "value": "//*[@aria-label='Salı, 31 Ekim 2023']",
+    "type": "xpath"
+  },
+  {
+    "key": "30 Kasım dönüş tarihi",
+    "value": "//*[@aria-label='Perşembe, 30 Kasım 2023']",
+    "type": "xpath"
+  },
+  {
+    "key": "tarih listesi",
+    "value": "//*[@class='CalendarDay CalendarDay_1 CalendarDay__default CalendarDay__default_2 CalendarDay__firstDayOfWeek CalendarDay__firstDayOfWeek_3']",
+    "type": "xpath"
+  },
+  {
+    "key": "çocuk yolcu artı buton",
+    "value": "//*[@data-testid='passengerCountIncrease-1']",
+    "type": "xpath"
+  },
+  {
+    "key": "bebek yolcu artı buton",
+    "value": "//*[@data-testid='passengerCountIncrease-2']",
+    "type": "xpath"
+  },
+  {
+    "key": "yetişkin yolcu eksi buton",
+    "value": "//*[@data-testid='passengerCountDecrease-0']",
+    "type": "xpath"
+  },
+  {
+    "key": "yolcu tamam buton",
+    "value": "//*[@data-testid='okButtonMulti']",
+    "type": "xpath"
+  },
+  {
+    "key": "uyarı mesaj contenti",
+    "value": "//*[@class='D_FSF__popover']",
+    "type": "xpath"
+  },
+  {
+    "key": "business sınıf",
+    "value": "//*[@data-testid='cabinClassButton-1']",
+    "type": "xpath"
+  },
+  {
+    "key": "ucuz bilet bul",
+    "value": "//*[@data-testid='formSubmitButton']",
+    "type": "xpath"
+  },
+  {
+    "key": "uçuş listesi header",
+    "value": "//*[@class='flight-list-header']",
+    "type": "xpath"
+  },
+  {
+    "key": "aramayı favorilere ekle",
+    "value": "//*[@data-testid='favorite-search-add-button']",
+    "type": "xpath"
+  },
+  {
+    "key": "tarih",
+    "value": "//*[text()='%s']",
+    "type": "xpath"
+  }
+]
