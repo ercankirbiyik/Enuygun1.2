@@ -1,10 +1,13 @@
 package step;
 
 import base.BaseTest;
+import com.example.annotations.FindByDataTestId;
+import com.example.locators.DataTestIdElementLocatorFactory;
 import methods.Methods;
 import com.thoughtworks.gauge.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
 
@@ -17,11 +20,21 @@ public class BaseSteps extends BaseTest {
     public BaseSteps() throws IOException {
         String currentWorkingDir = System.getProperty("user.dir");
         initMap(getFileList(currentWorkingDir + "/src"));
+        PageFactory.initElements(new DataTestIdElementLocatorFactory(driver), this);
         //initMap(getFileList());
     }
 
     Methods methods = new Methods();
 
+    @FindByDataTestId("passengerSelectButtonMulti")
+    WebElement yolcuSecimButonu;
+
+    @FindByDataTestId("endesign-flight-origin-autosuggestion-input")
+    WebElement OriginInput;
+    @FindByDataTestId("search-one-way-input")
+    WebElement oneWayCheckbox;
+    @FindByDataTestId("endesign-flight-destination-autosuggestion-input")
+    WebElement DestinationInput;
 
     @Step({"Go to <url> address",
             "<url> adresine git"})
@@ -52,6 +65,35 @@ public class BaseSteps extends BaseTest {
         }
     }
 
+    public void goToEnuygun() {
+        driver.get("https://www.enuygun.com/");
+    }
+    @Step("yolcu secim elementine tıkla")
+    public void deneme() {
+        yolcuSecimButonu.click();
+    }
+
+    @Step("nereden elementine tıkla")
+    public void deneme2(){
+        OriginInput.click();
+        logger.info(OriginInput + " elementine tıklandı");
+        OriginInput.sendKeys("Ankara");
+        OriginInput.sendKeys(Keys.ENTER);
+        logger.info(OriginInput + " elementine 'Ankara' yazıldı.");
+    }
+
+    @Step("nereye elementine tıkla")
+    public void deneme3(){
+        DestinationInput.click();
+        logger.info(DestinationInput + " elementine tıklandı");
+        DestinationInput.sendKeys("İstanbul");
+        DestinationInput.sendKeys(Keys.ENTER);
+    }
+
+    @Step("tek yön checkboxına tıkla")
+    public void deneme4(){
+        oneWayCheckbox.click();
+    }
 
     @Step({"Click to element <key>",
             "<key> elementine tıkla"})
@@ -74,6 +116,8 @@ public class BaseSteps extends BaseTest {
             logger.info(key + " elementine '" + text + "' texti yazıldı.");
         }
     }
+
+
 
 
     @Step({"<action> eylemini <key> elementine gönder",
