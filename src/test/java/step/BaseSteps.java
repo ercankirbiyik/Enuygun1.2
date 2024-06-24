@@ -36,6 +36,9 @@ public class BaseSteps extends BaseTest {
     @FindByDataTestId("endesign-flight-destination-autosuggestion-input")
     WebElement DestinationInput;
 
+    @FindByDataTestId("enuygun-homepage-flight-submitButton")
+    WebElement submitButton;
+
     @Step({"Go to <url> address",
             "<url> adresine git"})
     public void goToUrl(String url) {
@@ -76,18 +79,24 @@ public class BaseSteps extends BaseTest {
     @Step("nereden elementine tıkla")
     public void deneme2(){
         OriginInput.click();
-        logger.info(OriginInput + " elementine tıklandı");
-        OriginInput.sendKeys("Ankara");
+        OriginInput.clear();
+        logger.info(OriginInput.getAccessibleName() + " elementine tıklandı");
+        OriginInput.sendKeys("ESB");
+        waitBySeconds(1);
         OriginInput.sendKeys(Keys.ENTER);
-        logger.info(OriginInput + " elementine 'Ankara' yazıldı.");
+        logger.info(OriginInput.getAccessibleName() + " elementine 'Ankara' yazıldı.");
     }
 
     @Step("nereye elementine tıkla")
     public void deneme3(){
         DestinationInput.click();
-        logger.info(DestinationInput + " elementine tıklandı");
-        DestinationInput.sendKeys("İstanbul");
+        DestinationInput.clear();
+        logger.info(DestinationInput.getAccessibleName() + " elementine tıklandı");
+        DestinationInput.sendKeys("SAW");
+        waitBySeconds(1);
         DestinationInput.sendKeys(Keys.ENTER);
+        waitBySeconds(2);
+        submitButton.click();
     }
 
     @Step("tek yön checkboxına tıkla")

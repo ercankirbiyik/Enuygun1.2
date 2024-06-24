@@ -58,7 +58,7 @@ public class BaseTest {
                 if ("chrome".equalsIgnoreCase(browserName)) {
                     //driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
                     chromeOptions.addArguments("--start-fullscreen");
-                    //driver.get(testUrl);
+                    driver.get(testUrl);
                     logger.info(testUrl + " url adresi açılıyor!");
                 } else if ("firefox".equalsIgnoreCase(browserName)) {
                     //driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
